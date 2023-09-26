@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { getStoredDonationInfo } from "../../Utility/StoredDonationsInfo";
-import DonationCard from "../../components/Header/DonationCard/DonationCard";
 import { useEffect, useState } from "react";
+import DonatedCards from "../../components/DonatedCards/DonatedCards";
 
 const Donation = () => {
     const donationFeilds = useLoaderData();
@@ -16,10 +16,11 @@ const Donation = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-32">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-3 mt-32">
             {
-                donatedFeildsList.map((donation, idx) => <DonationCard key={idx} donation = {donation}></DonationCard>)
-            }
+                donatedFeildsList.map((donation, idx) => <DonatedCards key={idx} donation={donation}></DonatedCards>
+                
+            )}
         </div>
     );
 };
