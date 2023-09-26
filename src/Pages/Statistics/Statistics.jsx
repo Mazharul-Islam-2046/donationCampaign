@@ -27,7 +27,7 @@ const COLORS = ['#00C49F', '#FF444A'];
 
     return (
         <div className="w-full flex justify-center items-center">
-            <PieChart width={500} height={500} className="hidden md:hidden lg:flex mt-24">
+            <PieChart width={1000} height={500} className="hidden md:hidden lg:flex mt-20">
         <Pie
         dataKey="value"
         isAnimationActive={false}
@@ -46,7 +46,7 @@ const COLORS = ['#00C49F', '#FF444A'];
             </PieChart>
 
 
-            <PieChart width={400} height={400} className="hidden md:flex lg:hidden mt-24">
+            <PieChart width={800} height={500} className="hidden md:flex lg:hidden mt-24">
         <Pie
         dataKey="value"
         isAnimationActive={false}
