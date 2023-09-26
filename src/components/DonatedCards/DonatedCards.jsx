@@ -13,10 +13,10 @@ const DonatedCards = ({ donation }) => {
   } = donation;
   return (
     <div>
-      <div className="rounded-lg flex" style={{ backgroundColor: card_bg_color }}>
+      <div className="rounded-lg flex flex-col md:flex md:flex-row pb-4" style={{ backgroundColor: card_bg_color }}>
         <img src={picture} alt="" />
         <div>
-          <div className="p-8">
+          <div className="p-4 md:p-8">
             <p
               className="text-sm font-semibold inline py-1 px-2 rounded-sm "
               style={{

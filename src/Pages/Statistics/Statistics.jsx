@@ -26,7 +26,7 @@ useEffect(()=>{
 const COLORS = ['#FF444A', '#00C49F'];
     return (
         <div className="w-full flex justify-center items-center">
-            <PieChart width={500} height={500}>
+            <PieChart width={500} height={500} className="hidden md:hidden lg:flex mt-24">
         <Pie
         dataKey="value"
         isAnimationActive={false}
@@ -34,6 +34,45 @@ const COLORS = ['#FF444A', '#00C49F'];
         cx="50%"
         cy="50%"
         outerRadius={200}
+        fill="#8884d8"
+        label>
+            {dataOfDonation.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+        </Pie>
+        <Tooltip></Tooltip>
+        <Legend></Legend>
+            </PieChart>
+
+
+            <PieChart width={400} height={400} className="hidden md:flex lg:hidden mt-24">
+        <Pie
+        dataKey="value"
+        isAnimationActive={false}
+        data={dataOfDonation}
+        cx="50%"
+        cy="50%"
+        outerRadius={160}
+        fill="#8884d8"
+        label>
+            {dataOfDonation.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+        </Pie>
+        <Tooltip></Tooltip>
+        <Legend></Legend>
+            </PieChart>
+
+
+
+            <PieChart width={300} height={400} className="md:hidden mt-8">
+        <Pie
+        dataKey="value"
+        isAnimationActive={false}
+        data={dataOfDonation}
+        cx="50%"
+        cy="50%"
+        outerRadius={120}
         fill="#8884d8"
         label>
             {dataOfDonation.map((entry, index) => (

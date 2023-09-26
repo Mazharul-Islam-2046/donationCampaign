@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import DonationCard from "../../components/Header/DonationCard/DonationCard";
+import DonationCard from "../../components/DonationCard/DonationCard";
 import { searchByCategories } from "../../Utility/searchByCategories";
 import { useState } from "react";
 
@@ -15,10 +15,10 @@ const Home = () => {
     }
 
     return (
-        <div className="flex flex-col gap-28">
+        <div className="flex flex-col gap-4 md:gap-28">
             {/* Banner Section */}
-            <div className="flex flex-col gap-10 justify-center items-center h-[60vh] relative overflow-hidden">
-                <h1 className="text-5xl font-bold">I Grow By Helping People In Need</h1>
+            <div className="flex flex-col gap-6 md:gap-10 justify-center items-center h-[60vh] relative overflow-hidden">
+                <h1 className="text-2xl text-center md:text-3xl lg:text-5xl font-bold">I Grow By Helping People In Need</h1>
                 <div>
                     <input onKeyUp={handleSearch} placeholder="Search Here" type="text" className="w-64 px-4
                     border py-2 border-r-0 rounded-l-md text-xs"/>
@@ -28,7 +28,7 @@ const Home = () => {
             </div>
 
             {/* Donation List */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-4 md:gap-3">
                 {
                     displayData.map((donation, idx) => <DonationCard key = {idx} donation = {donation}></DonationCard>)
                 }
