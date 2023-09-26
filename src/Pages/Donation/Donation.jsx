@@ -1,30 +1,25 @@
-import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredDonationInfo } from "../../Utility/StoredDonationsInfo";
+import DonationCard from "../../components/Header/DonationCard/DonationCard";
+import { useEffect, useState } from "react";
 
 const Donation = () => {
     const donationFeilds = useLoaderData();
-
-    const [donatedList, setDonatedList] = useState([])
-    const [displayDonatedList, setDisplayDonatedList] = useState([])
-
-    useEffect(() => {
-        const storedDonationIds = getStoredDonationInfo()
-         if (donationFeilds.length > 0) {
-
-            const storedDonatedList = donationFeilds.filter(donatedfeild => storedDonationIds.includes(donatedfeild.id))
+    const [donatedFeildsList, setDonationFeildsList] = useState([])
 
 
-            setDonatedList(storedDonatedList);
-            setDisplayDonatedList(storedDonatedList)
-        }
+    useEffect(()=>{
+    const donatedIds = getStoredDonationInfo();
+    const donatedFeilds = donationFeilds.filter(donationFeild => donatedIds.includes(donationFeild.id));
+    setDonationFeildsList(donatedFeilds);
     },[donationFeilds])
 
 
-
     return (
-        <div>
-            <h1>Donation</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-32">
+            {
+                donatedFeildsList.map((donation, idx) => <DonationCard key={idx} donation = {donation}></DonationCard>)
+            }
         </div>
     );
 };
