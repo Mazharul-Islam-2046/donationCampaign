@@ -6,7 +6,7 @@ import { useState } from "react";
 const Header = () => {
 
 
-    const [menuState, setMenuState] = useState(false);
+    const [menuState, setMenuState] = useState(true);
     
     const handleMenu = () => {
         setMenuState(!menuState);

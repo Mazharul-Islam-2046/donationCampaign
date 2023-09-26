@@ -17,13 +17,14 @@ useEffect(()=>{
     const postiveDonationLeft = Math.abs(donationLeft)
 
     const donationAmount = [
-        {type:"Donated", value: donatedFeilds.length},
-        {type:"DonationLeft", value: postiveDonationLeft}
+        {name:"Donated", value: donatedFeilds.length},
+        {name:"DonationLeft", value: postiveDonationLeft}
     ]
     setDataOfDonation(donationAmount)
 },[donationFeilds])
 
 const COLORS = ['#FF444A', '#00C49F'];
+
     return (
         <div className="w-full flex justify-center items-center">
             <PieChart width={500} height={500} className="hidden md:hidden lg:flex mt-24">
@@ -35,7 +36,7 @@ const COLORS = ['#FF444A', '#00C49F'];
         cy="50%"
         outerRadius={200}
         fill="#8884d8"
-        label>
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>
             {dataOfDonation.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
@@ -54,7 +55,7 @@ const COLORS = ['#FF444A', '#00C49F'];
         cy="50%"
         outerRadius={160}
         fill="#8884d8"
-        label>
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>>
             {dataOfDonation.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
@@ -65,7 +66,7 @@ const COLORS = ['#FF444A', '#00C49F'];
 
 
 
-            <PieChart width={300} height={400} className="md:hidden mt-8">
+            <PieChart width={400} height={400} className="md:hidden mt-8">
         <Pie
         dataKey="value"
         isAnimationActive={false}
@@ -74,7 +75,7 @@ const COLORS = ['#FF444A', '#00C49F'];
         cy="50%"
         outerRadius={120}
         fill="#8884d8"
-        label>
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>>
             {dataOfDonation.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
@@ -87,3 +88,8 @@ const COLORS = ['#FF444A', '#00C49F'];
 };
 
 export default Statistics;
+
+
+
+
+

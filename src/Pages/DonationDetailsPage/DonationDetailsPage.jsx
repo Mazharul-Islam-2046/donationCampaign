@@ -1,23 +1,25 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveDonationInfo } from "../../Utility/StoredDonationsInfo";
+import toast, { Toaster } from 'react-hot-toast';
 
 const DonationDetailsPage = () => {
   const donations = useLoaderData();
   const { id } = useParams();
   const donation = donations.find((donation) => donation.id === id);
-  const { banner_img, price, title, description } = donation;
+  const { banner_img, price, title, description,text_button_bg_color } = donation;
 
   const handleDonate = () => {
     saveDonationInfo(id);
-    alert("Donted");
+    toast("You have successfully Donated")
   };
   return (
     <div>
+      <Toaster></Toaster>
       <div className="w-full mt-20">
         <div className="relative">
           <img className="w-full" src={banner_img} alt="" />
           <div className="absolute bg-black bg-opacity-30 bottom-0 left-0 w-full p-5">
-            <button className="text-white py-2 px-4 bg-red-500 rounded-md" onClick={handleDonate}>Donate {price}</button>
+            <button style={{backgroundColor: text_button_bg_color}} className="text-white py-2 px-4 rounded-md" onClick={handleDonate}>Donate {price}</button>
           </div>
         </div>
 

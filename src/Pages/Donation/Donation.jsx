@@ -26,7 +26,7 @@ const Donation = () => {
       <div className="text-center">
       <button
         onClick={() => setDataLength(donatedFeildsList.length)}
-        className={`${dataLength === donatedFeildsList.length || donatedFeildsList.length < 4 ? "hidden" : ""} mt-12 bg-red-400 py-2 px-6 rounded-md text-white`}
+        className={`${dataLength === donatedFeildsList.length || donatedFeildsList.length < 4 ? "hidden" : ""} mt-12 bg-green-700 py-2 px-6 rounded-md text-white`}
       >
         See All
       </button>

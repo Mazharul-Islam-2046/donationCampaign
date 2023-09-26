@@ -34,7 +34,7 @@ const DonatedCards = ({ donation }) => {
 
             <p className="mb-8" style={{color: text_button_bg_color}}>{price}</p>
 
-            <Link className="py-2 px-4 rounded-md" style={{ backgroundColor: category_bg_color }} to={`/donation/${id}`}>View Details</Link>
+            <Link className="py-2 px-4 rounded-md text-white" style={{ backgroundColor: text_button_bg_color }} to={`/donation/${id}`}>View Details</Link>
           </div>
         </div>
       </div>
