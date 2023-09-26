@@ -23,7 +23,7 @@ useEffect(()=>{
     setDataOfDonation(donationAmount)
 },[donationFeilds])
 
-const COLORS = ['#FF444A', '#00C49F'];
+const COLORS = ['#00C49F', '#FF444A'];
 
     return (
         <div className="w-full flex justify-center items-center">
