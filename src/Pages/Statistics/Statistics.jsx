@@ -55,7 +55,7 @@ const COLORS = ['#00C49F', '#FF444A'];
         cy="50%"
         outerRadius={160}
         fill="#8884d8"
-        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>>
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>
             {dataOfDonation.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
@@ -75,7 +75,7 @@ const COLORS = ['#00C49F', '#FF444A'];
         cy="50%"
         outerRadius={120}
         fill="#8884d8"
-        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>>
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(2)}%`}>
             {dataOfDonation.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
