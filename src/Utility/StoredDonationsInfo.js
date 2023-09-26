@@ -12,7 +12,7 @@ const saveDonationInfo = (id) => {
   if (!exists) {
     storedDonationInfo.push(id);
     localStorage.setItem(
-      "job-applications",
+      "donation-Info",
       JSON.stringify(storedDonationInfo)
     );
   }
