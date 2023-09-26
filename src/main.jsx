@@ -9,6 +9,7 @@ import Donation from './Pages/Donation/Donation.JSX';
 import Root from './Pages/Root/Root';
 import Statistics from './Pages/Statistics/Statistics';
 import Home from './Pages/Home/Home'
+import DonationDetailsPage from './Pages/donationDetailsPage/donationDetailsPage';
 
 
 
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: '/statistics',
         element: <Statistics></Statistics>
+      },
+      {
+        path: '/donation/:id',
+        element: <DonationDetailsPage></DonationDetailsPage>,
+        loader: () => fetch('/public/data.json')
       }
     ]
   },

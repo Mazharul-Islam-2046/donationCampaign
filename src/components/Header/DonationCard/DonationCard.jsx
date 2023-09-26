@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 const DonationCard = ({donation}) => {
-    const {title, banner_img, category, card_bg_color, category_bg_color, text_button_bg_color} = donation;
+    const {id, title, banner_img, category, card_bg_color, category_bg_color, text_button_bg_color} = donation;
     
     return (
+        <Link to={`/donation/${id}`}>
         <div className='rounded-lg' style={{backgroundColor: card_bg_color}}>
             <img src={banner_img} alt="" />
             <div>
@@ -12,6 +14,7 @@ const DonationCard = ({donation}) => {
                 </div>
             </div>
         </div>
+        </Link>
         
     );
 };
